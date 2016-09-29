@@ -15,7 +15,6 @@ public class ZapposTest {
 
     @Test
     public void main() {
-        Assert.assertEquals(driver.getTitle(), "Online Shoes, Clothing, Free Shipping and Returns | Zappos.com");
         WebElement menShoesLink = driver.findElement(By.cssSelector("a[class$='Shop-Men-s-Shoes']"));
         menShoesLink.click();
         Assert.assertEquals(driver.getTitle(), "Men's Shoes, Shoes For Men | Ships FREE at Zappos.com");
@@ -25,7 +24,7 @@ public class ZapposTest {
         WebElement inov8Link = driver.findElement(By.cssSelector("a[class$='Inov-8 ']"));
         inov8Link.click();
         Assert.assertEquals(driver.getTitle(), "Inov-8, Sneakers & Athletic Shoes, Athletic, Men | Shipped Free at Zappos");
-        WebElement inov8ShoeLink = driver.findElement(By.cssSelector("a[class$='product product-8734874 style-3637472 r0-5-3']"));
+        WebElement inov8ShoeLink = driver.findElement(By.cssSelector("a[class*='product-8734874 style-3637472']"));
         inov8ShoeLink.click();
         Assert.assertEquals(driver.getTitle(), "inov-8 F-Lite 240 Black/Dark Red/White - Zappos.com Free Shipping BOTH Ways");
         WebElement addToCartButton = driver.findElement(By.id("addToCart"));
