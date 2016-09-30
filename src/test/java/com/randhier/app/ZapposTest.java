@@ -26,41 +26,50 @@ public class ZapposTest {
     By cancelLoc = By.cssSelector(".btn.secondary");
 
 
+    public WebElement getElement(By loc){
+        WebElement element = driver.findElement(loc);
+        return element;
+    }
+
+    public void clickElement(By loc){
+        getElement(loc).click();
+    }
+
+    public void sendTextToElement(String text, By loc){
+        getElement(loc).sendKeys(text);
+    }
+
+    public void selectVisableTextOfElement(String text, By loc){
+        Select select = new Select(getElement(loc));
+        select.selectByVisibleText(text);
+    }
+
+
     @Test
     public void main() {
-        WebElement menShoesLink = driver.findElement(menShoesLoc);
-        menShoesLink.click();
+        clickElement(menShoesLoc);
         Assert.assertEquals(driver.getTitle(), "Men's Shoes, Shoes For Men | Ships FREE at Zappos.com");
-        WebElement menAthleticLink = driver.findElement(menAthleticLoc);
-        menAthleticLink.click();
+        clickElement(menAthleticLoc);
         Assert.assertEquals(driver.getTitle(), "Shoes, Athletic, Men | Shipped Free at Zappos");
-        WebElement inov8Link = driver.findElement(inov8Loc);
-        inov8Link.click();
+        clickElement(inov8Loc);
         Assert.assertEquals(driver.getTitle(), "Inov-8, Sneakers & Athletic Shoes, Athletic, Men | Shipped Free at Zappos");
-        WebElement inov8ShoeLink = driver.findElement(inov8ShoeLoc);
-        inov8ShoeLink.click();
+        clickElement(inov8ShoeLoc);
         Assert.assertEquals(driver.getTitle(), "inov-8 F-Lite 240 Black/Dark Red/White - Zappos.com Free Shipping BOTH Ways");
-        WebElement addToCartButton = driver.findElement(addToCartLoc);
-        addToCartButton.click();
+        clickElement(addToCartLoc);
         WebElement info = driver.findElement(infoLoc);
         Assert.assertEquals(info.getText().trim(), "Please select a size");
-        WebElement noSizeLink = driver.findElement(noSizeLoc);
-        noSizeLink.click();
+        clickElement(noSizeLoc);
         for (String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);}
         Assert.assertEquals(driver.getTitle(), "Zappos.com - Notify Me!");
-        WebElement emailField = driver.findElement(emailLoc);
-        emailField.sendKeys("Test123");
-        Select select = new Select(driver.findElement(colorLoc));
-        select.selectByVisibleText("Blue/Grey/White");
-        Select select1 = new Select(driver.findElement(sizeLoc));
-        select1.selectByVisibleText("UK 10 (US Men's 11)");
+        sendTextToElement("Test123", emailLoc);
+        selectVisableTextOfElement("Blue/Grey/White", colorLoc);
+        selectVisableTextOfElement("UK 10 (US Men's 11)", sizeLoc);
         /**
-         * Rather than spam zappos with request, I decided to just hit the cancel button
+         * Rather than spam zappos with requests, I decided to just hit the cancel button
          * instead of submitting.  It's their public site so I rather not.
          */
-        WebElement cancelButton = driver.findElement(cancelLoc);
-        cancelButton.click();
+        clickElement(cancelLoc);
     }
 
     @BeforeClass
