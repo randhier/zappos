@@ -44,6 +44,11 @@ public class ZapposTest {
         select.selectByVisibleText(text);
     }
 
+    public String getElementText(By loc){
+        String text = getElement(loc).getText().trim();
+        return text;
+    }
+
 
     @Test
     public void main() {
@@ -56,8 +61,7 @@ public class ZapposTest {
         clickElement(inov8ShoeLoc);
         Assert.assertEquals(driver.getTitle(), "inov-8 F-Lite 240 Black/Dark Red/White - Zappos.com Free Shipping BOTH Ways");
         clickElement(addToCartLoc);
-        WebElement info = driver.findElement(infoLoc);
-        Assert.assertEquals(info.getText().trim(), "Please select a size");
+        Assert.assertEquals(getElementText(infoLoc), "Please select a size");
         clickElement(noSizeLoc);
         for (String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);}
