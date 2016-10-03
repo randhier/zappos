@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class NoSizeNotifyPage extends BasePage {
 
-    WebDriver driver;
     By emailField = By.id("email");
     By colorDropdown = By.id("styleId");
     By sizeDropdown = By.id("dimensionValueIds");

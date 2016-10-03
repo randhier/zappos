@@ -8,12 +8,12 @@ import pageObject.*;
 
 public class ZapposTest {
 
-    public WebDriver driver;
-    public HomePage HomePage;
-    public MenShoePage MensPage;
-    public MenAthleticPage AthleticPage;
-    public BrandPage Inov8Page;
-    public NoSizeNotifyPage NotifyMePage;
+    private WebDriver driver;
+    private HomePage HomePage;
+    private MenShoePage MensPage;
+    private MenAthleticPage AthleticPage;
+    private BrandPage Inov8Page;
+    private NoSizeNotifyPage NotifyMePage;
 
     @Test
     public void main() {

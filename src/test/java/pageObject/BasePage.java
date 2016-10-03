@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
+
     WebDriver driver;
 
     public BasePage(WebDriver driver) {

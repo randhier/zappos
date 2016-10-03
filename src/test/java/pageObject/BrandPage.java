@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class BrandPage extends BasePage {
 
-    WebDriver driver;
     By addToCartButton = By.id("addToCart");
     By infoPopup = By.cssSelector(".info div");
     By noSizeLink = By.id("notifyMePopupLink");
