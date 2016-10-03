@@ -17,7 +17,6 @@ public class ZapposTest {
 
     @Test
     public void main() {
-        System.out.println(driver.getTitle());
         HomePage.clickMenShoeLink();
         Assert.assertEquals(driver.getTitle(), "Men's Shoes, Shoes For Men | Ships FREE at Zappos.com");
         MensPage.clickMenAthleticLink();
