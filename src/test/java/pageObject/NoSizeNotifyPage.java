@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class NoSizeNotifyPage extends BasePage {
 
-    By emailField = By.id("email");
-    By colorDropdown = By.id("styleId");
-    By sizeDropdown = By.id("dimensionValueIds");
-    By cancelButton = By.cssSelector(".btn.secondary");
+    private static By emailField = By.id("email");
+    private static By colorDropdown = By.id("styleId");
+    private static By sizeDropdown = By.id("dimensionValueIds");
+    private static By cancelButton = By.cssSelector(".btn.secondary");
 
     public NoSizeNotifyPage(WebDriver driver) {
         super(driver);

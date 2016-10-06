@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage {
 
-    By menShoesLink = By.cssSelector("a[class$='Shop-Men-s-Shoes']");
+    private static By menShoesLink = By.cssSelector("a[class$='Shop-Men-s-Shoes']");
 
     public HomePage(WebDriver driver){
         super(driver);
