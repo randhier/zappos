@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pageObject.*;
+import com.randhier.app.pageObject.*;
 
 public class ZapposTest {
 
